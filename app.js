@@ -7,7 +7,7 @@ const app = express();
 const DB_USER_NAME = process.env.DB_USER_NAME;
 const DB_USER_PASSWORD = process.env.DB_USER_PASSWORD;
 const DEV_DB_URL = "mongodb://localhost/farcry5-map";
-const PROD_DB_URL = `mongodb+srv://${DB_USER_NAME}:${DB_USER_PASSWORD}@cluster0-z1tm1.mongodb.net/tic-tac-toe?retryWrites=true&w=majority`;
+const PROD_DB_URL = `mongodb+srv://${DB_USER_NAME}:${DB_USER_PASSWORD}@cluster0-z1tm1.mongodb.net/farcry5-map?retryWrites=true&w=majority`;
 const mongoDB =
   process.env.NODE_ENV === "production" ? PROD_DB_URL : DEV_DB_URL;
 const PORT = process.env.PORT || 3000;
