@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const route = require("./routes/poi");
+const locationRoute = require("./routes/location");
+const categoryRoute = require("./routes/category");
 var mongoose = require("mongoose");
 
 const app = express();
@@ -41,7 +42,8 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 app.use(allowCrossDomain);
-app.use("/farcry5-map", route);
+app.use("/farcry5-map", locationRoute);
+app.use("/farcry5-map", categoryRoute);
 
 app.listen(PORT, () => {
   console.log("Server is up and running on port number " + PORT);
